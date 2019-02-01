@@ -5,6 +5,7 @@ USER root
 
 RUN apk add --no-cache --update --virtual .build-deps sudo build-base ruby-dev \
     && gem sources --clear-all \
+    && fluent-gem install fluent-plugin-elasticsearch \
     && fluent-gem install fluent-plugin-fields-autotype \
     && fluent-gem install fluent-plugin-record-modifier --no-document \
     && fluent-gem install fluent-plugin-rewrite-tag-filter \
